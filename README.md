@@ -1,4 +1,4 @@
-# Data from Griffiths et al. (in review) Transgenerational plasticity and the capacity to adapt to low salinity in the eastern oyster, Crassostrea virginica
+# Data and code from Griffiths et al. (in review) Transgenerational plasticity and the capacity to adapt to low salinity in the eastern oyster, Crassostrea virginica
 
 ## Size Analyses
 *Script*: Oyster_size_ANOVA.R
