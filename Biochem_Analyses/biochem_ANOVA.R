@@ -29,33 +29,26 @@ shapiro.test(lgFA)
 shapiro.test(lgCH)
 shapiro.test(lgPL)
 
-
-protein.model = lm(lgProtein ~ Site*Pop, data=biochem)
 protein.model = lm(lgProtein ~ Site, data=biochem)
 aov1 = aov(protein.model)
 summary(aov1)
  
-HC.model = lm(lgHC ~ Site*Pop, data=biochem)
 HC.model = lm(lgHC ~ Site, data=biochem)
 aov1 = aov(HC.model)
 summary(aov1)
 
-TG.model = lm(lgTG ~ Site*Pop, data=biochem)
 TG.model = lm(lgTG ~ Site, data=biochem)
 aov1 = aov(TG.model)
 summary(aov1)
 
-FA.model = lm(lgFA ~ Site*Pop, data=biochem)
 FA.model = lm(lgFA ~ Site, data=biochem)
 aov1 = aov(FA.model)
 summary(aov1)
 
-CH.model = lm(lgCH ~ Site*Pop, data=biochem)
 CH.model = lm(lgCH ~ Site, data=biochem)
 aov1 = aov(CH.model)
 summary(aov1)
 
-PL.model = lm(lgPL ~ Site*Pop, data=biochem)
 PL.model = lm(lgPL ~ Site, data=biochem)
 aov1 = aov(PL.model)
 summary(aov1)
