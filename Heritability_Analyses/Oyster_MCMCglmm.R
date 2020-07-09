@@ -3,7 +3,7 @@ library(MCMCglmm)
 
 setwd("~/Documents/Oyster Heritability Data")
 
-Data<-as.data.frame(read.table(file="oyster_size_VB_LC.txt",header=TRUE))
+Data<-as.data.frame(read.table(file="oyster_size.txt",header=TRUE))
 Data$animal<-as.factor(Data$animal)
 Data$Sire<-as.factor(Data$Sire)
 Data$Dam<-as.factor(Data$Dam)
@@ -18,7 +18,7 @@ Data$Length2 <- Data$Length * 1000
 Data <- subset(Data, Salinity=="L")
 Data <- subset(Data, Salinity=="H")
 
-Ped<-as.data.frame(read.table(file="oyster_ped_VB_LC.txt",header=TRUE)) 
+Ped<-as.data.frame(read.table(file="oyster_ped.txt",header=TRUE)) 
 Ped$animal<-as.factor(Ped$animal)
 Ped$FATHER<-as.factor(Ped$FATHER)
 Ped$MOTHER<-as.factor(Ped$MOTHER)
@@ -191,11 +191,11 @@ model1.9<-MCMCglmm(Length~Dam,random=~animal+SireID+DamID,
                    prior=prior1.9,verbose=FALSE)
 posterior.mode(model1.9$VCV)
 
-save(model1.1, model1.2, model1.3, model1.4, model1.4new, model1.7, model1.8, model1.9, file = "VB_LC_Oyster_HighSal_MCMCglmm_results.RData")
-save(model1.1, model1.2, model1.3, model1.4, model1.4new, model1.7, model1.8, model1.9, file = "VB_LC_Oyster_LowSal_MCMCglmm_results.RData")
+save(model1.1, model1.2, model1.3, model1.4, model1.4new, model1.7, model1.8, model1.9, file = "Oyster_HighSal_MCMCglmm_results.RData")
+save(model1.1, model1.2, model1.3, model1.4, model1.4new, model1.7, model1.8, model1.9, file = "Oyster_LowSal_MCMCglmm_results.RData")
 
-load("VB_LC_Oyster_LowSal_MCMCglmm_results.RData")
-load("VB_LC_Oyster_HighSal_MCMCglmm_results.RData")
+load("Oyster_LowSal_MCMCglmm_results.RData")
+load("Oyster_HighSal_MCMCglmm_results.RData")
 
 model1.1$DIC #dam+sire
 model1.2$DIC #sire
