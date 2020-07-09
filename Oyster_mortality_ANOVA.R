@@ -5,7 +5,7 @@ library(emmeans)
 
 setwd("~/Documents/Oyster Heritability Data")
 
-mort=read.table("oyster_mortality_LC_VB.txt", header = T)
+mort=read.table("oyster_mortality.txt", header = T)
 mort$Cross <- as.factor(mort$Cross)
 mort$Salinity <- as.factor(mort$Salinity)
 mort$Sire <- as.factor(mort$Sire)
