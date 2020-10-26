@@ -28,3 +28,10 @@
 *Input files*: oyster_ped.txt, oyster_size.txt
 
 *Description*: Script contains different models for estimating heritability and variance components for larval size. Oyster_ped.txt contains pedigree information for each family.
+
+## Genetic Co-Variation Analyses
+*script*: Genetic_coVariation.R
+
+*Input files*: family_means_v2.csv, oyster_ped_covar_matrix.txt
+
+*Description*: Script contains model for estimating genetic co-variation between families reared at low and high salinity conditions. oyster_ped_covar_matrix.txt contains pedigree information for each family. family_means_v2.csv contains mean larval size for each family reared at low and high salinity. 
