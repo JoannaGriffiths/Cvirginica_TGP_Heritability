@@ -19,7 +19,7 @@
 
 *Input files*: parent_mort.txt, cumulative_parent_mort.txt
 
-*Description*: Script contains code for mortality data for adults outplanted at the two field acclimation sites. parent_mort.txt contains mrotality data after two years of outplant and the cumulative_parent_mort.txt contains the mortality collected every two months for adults outplanted at the field sites.
+*Description*: Script contains code for mortality data for adults outplanted at the two field acclimation sites. parent_mort.txt contains mortality data after two years of outplant and the cumulative_parent_mort.txt contains the mortality collected every two months for adults outplanted at the field sites.
 
 ## Biochem Analyses
 *Script*: biochem_ANOVA.R
