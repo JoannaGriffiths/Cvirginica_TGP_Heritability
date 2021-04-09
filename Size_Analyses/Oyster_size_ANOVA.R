@@ -116,6 +116,11 @@ Residuals    2588  45.43  0.0176
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 '''
 
+#check that block does not exlpain residuals in our model. It does not, thus Block was not included as a random effect in model
+model1.6.resid <- resid(growth.model1.6)
+windows()
+plot(growth$Block, model1.6.resid, ylab="Residuals", xlab="Block")
+
   
   #graph low vs high dam acclimation salinity and rearing salinity at low vs high
   low_sal_low_dam=subset(growth$Length, growth$Salinity=="L" & growth$Dam=="L")
