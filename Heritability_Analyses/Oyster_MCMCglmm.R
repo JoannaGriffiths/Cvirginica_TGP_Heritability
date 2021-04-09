@@ -288,3 +288,33 @@ posterior.mode((model1.4.L2$VCV[,"animal"]+model1.4.L2$VCV[,"DamID"]+model1.4.L2
 HPDinterval((model1.4.L2$VCV[,"animal"]+model1.4.L2$VCV[,"DamID"]+model1.4.L2$VCV[,"units"]),0.95)
 
 
+############### breeder's equation for significance of heritability estimates
+library("dplyr")
+
+growth <- read.table("oyster_size.txt", header = T)
+low_sal=subset(growth, growth$Salinity=="L")
+low_sal$size <- low_sal$Length * 1000
+
+low_upper = subset(low_sal, low_sal$Length > 0.065) #larvae smaller than 65 um would have to die to see shift in mean size at low salinity by 5um
+mean(low_upper$Length) #0.0794
+
+percentile <- ecdf(low_sal$Length)
+
+percentile(0.065) #0.255, 25.5% smallest individuals die to evolve back to ambient salinity size
+hist(low_sal$Length)
+
+#plot histogram/density of larval sizes at low salinity
+dat <- with(density(low_sal$size), data.frame(x, y))
+windows()
+ggplot(dat, mapping = aes(x = x, y = y)) + 
+  geom_line(size = 1, color = "black")+
+  geom_vline(aes(xintercept = 74.4),col='black',size=0.5)+
+  geom_vline(aes(xintercept = 79.4),col='red',size=0.5)+
+  geom_area(mapping = aes(x = ifelse(x>30 & x< 65 , x,0)), fill = "red") +
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.background = element_blank(), axis.line = element_line(colour = "black"),
+        plot.background = element_rect(fill = "transparent", color = NA))+
+  ylim(0,0.04)+
+  scale_x_continuous(breaks=seq(20,150,10))
+##########################
+
