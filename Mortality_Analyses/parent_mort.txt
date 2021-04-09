@@ -1,0 +1,7 @@
+Site	Mort
+GI	29.99
+GI	39.6
+GI	21.08
+LUM	33.51
+LUM	45.5
+LUM	26.11
