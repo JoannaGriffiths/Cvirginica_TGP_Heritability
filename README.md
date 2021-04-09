@@ -27,7 +27,7 @@
 
 *Input files*: oyster_ped.txt, oyster_size.txt
 
-*Description*: Script contains different models for estimating heritability and variance components for larval size. Oyster_ped.txt contains pedigree information for each family.
+*Description*: Script contains different models for estimating heritability and variance components for larval size. Oyster_ped.txt contains pedigree information for each family. This script also uses the breeder's equation to estimate the required mortality to return larval sizes back to ambient salinity conditions after one generation of selection.
 
 ## Genetic Co-Variation Analyses
 *script*: Genetic_coVariation.R
